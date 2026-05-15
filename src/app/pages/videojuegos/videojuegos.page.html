@@ -1,31 +1,58 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Venta de Videojuegos</ion-title>
+  <ion-toolbar class="toolbar">
+    <ion-title>🎮 Venta de Videojuegos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="fondo">
 
-  <ion-list>
-    <ion-item *ngFor="let juego of videojuegos">
-      <ion-label>
-        <h2>{{ juego.titulo }}</h2>
-        <p>{{ juego.plataforma }} | {{ juego.categoria }}</p>
-        <p>Precio: ${{ juego.precio }} | Stock: {{ juego.stock }}</p>
-      </ion-label>
+  <section class="encabezado">
+    <h1>Catálogo</h1>
+    <p>Gestiona tus videojuegos disponibles</p>
+  </section>
 
-      <ion-button color="warning" [routerLink]="['/videojuegos-form', juego.id]">
-        Editar
-      </ion-button>
+  <section class="lista-juegos">
 
-      <ion-button color="danger" (click)="eliminar(juego.id!)">
-        Eliminar
-      </ion-button>
-    </ion-item>
-  </ion-list>
+    <ion-card class="juego-card" *ngFor="let juego of videojuegos">
+
+      <div class="imagen-box">
+        <img [src]="juego.imagen_url || 'https://placehold.co/600x400/eef2ff/4f46e5?text=Videojuego'"
+          alt="Imagen del videojuego">
+      </div>
+
+      <ion-card-content>
+
+        <div class="fila-titulo">
+          <h2>{{ juego.titulo }}</h2>
+          <span class="precio">${{ juego.precio }}</span>
+        </div>
+
+        <p class="categoria">
+          {{ juego.plataforma }} · {{ juego.categoria }}
+        </p>
+
+        <p class="stock">
+          Stock disponible: <strong>{{ juego.stock }}</strong>
+        </p>
+
+        <div class="acciones">
+          <ion-button fill="outline" size="small" class="btn-editar" [routerLink]="['/videojuego-form', juego.id]">
+            Editar
+          </ion-button>
+
+          <ion-button size="small" class="btn-eliminar" (click)="eliminar(juego.id!)">
+            Eliminar
+          </ion-button>
+        </div>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  </section>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/videojuegos-form">
+    <ion-fab-button routerLink="/videojuego-form">
       +
     </ion-fab-button>
   </ion-fab>

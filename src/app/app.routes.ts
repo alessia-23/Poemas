@@ -9,27 +9,16 @@ export const routes: Routes = [
   {
     path: 'videojuegos',
     loadComponent: () =>
-      import('./pages/videojuegos/videojuegos.page')
-        .then(m => m.VideojuegosPage)
-  },
-  {
-    path: 'videojuegos-form',
-    loadComponent: () =>
-      import('./pages/videojuego-form/videojuego-form.page')
-        .then(m => m.VideojuegoFormPage)
-  },
-  {
-    path: 'videojuegos-form/:id',
-    loadComponent: () =>
-      import('./pages/videojuego-form/videojuego-form.page')
-        .then(m => m.VideojuegoFormPage)
-  },
-  {
-    path: 'videojuegos',
-    loadComponent: () => import('./pages/videojuegos/videojuegos.page').then( m => m.VideojuegosPage)
+      import('./pages/videojuegos/videojuegos.page').then(m => m.VideojuegosPage)
   },
   {
     path: 'videojuego-form',
-    loadComponent: () => import('./pages/videojuego-form/videojuego-form.page').then( m => m.VideojuegoFormPage)
+    loadComponent: () =>
+      import('./pages/videojuego-form/videojuego-form.page').then(m => m.VideojuegoFormPage)
+  },
+  {
+    path: 'videojuego-form/:id',
+    loadComponent: () =>
+      import('./pages/videojuego-form/videojuego-form.page').then(m => m.VideojuegoFormPage)
   }
 ];
