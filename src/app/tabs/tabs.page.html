@@ -1,13 +1,24 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>tabs</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-tabs>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">tabs</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+  <ion-router-outlet></ion-router-outlet>
+
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab="inicio" href="/tabs/inicio">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="poemas" href="/tabs/poemas">
+      <ion-icon name="library"></ion-icon>
+      <ion-label>Poemas</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="multimedia" href="/tabs/multimedia">
+      <ion-icon name="musical-notes"></ion-icon>
+      <ion-label>Media</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>

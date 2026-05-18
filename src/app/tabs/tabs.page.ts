@@ -1,20 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { Component, EnvironmentInjector, inject } from '@angular/core';
+
+import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonHeader, IonToolbar, IonTitle, IonRouterOutlet } from '@ionic/angular/standalone';
+
+import { addIcons } from 'ionicons';
+
+import { home, library, musicalNotes } from 'ionicons/icons';
 
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.page.html',
   styleUrls: ['./tabs.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonHeader, IonToolbar,
+    IonTitle, IonRouterOutlet
+  ],
 })
-export class TabsPage implements OnInit {
+export class TabsPage {
 
-  constructor() { }
+  public environmentInjector = inject(EnvironmentInjector);
 
-  ngOnInit() {
+  constructor() {
+
+    addIcons({
+      home, library, musicalNotes
+    });
+
   }
-
 }
