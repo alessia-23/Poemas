@@ -20,5 +20,21 @@ export const routes: Routes = [
     path: 'videojuego-form/:id',
     loadComponent: () =>
       import('./pages/videojuego-form/videojuego-form.page').then(m => m.VideojuegoFormPage)
+  },  {
+    path: 'tabs',
+    loadComponent: () => import('./tabs/tabs.page').then( m => m.TabsPage)
+  },
+  {
+    path: 'inicio',
+    loadComponent: () => import('./pages/inicio/inicio.page').then( m => m.InicioPage)
+  },
+  {
+    path: 'poemas',
+    loadComponent: () => import('./pages/poemas/poemas.page').then( m => m.PoemasPage)
+  },
+  {
+    path: 'multimedia',
+    loadComponent: () => import('./pages/multimedia/multimedia.page').then( m => m.MultimediaPage)
   }
+
 ];
