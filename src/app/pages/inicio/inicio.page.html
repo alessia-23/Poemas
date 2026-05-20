@@ -1,13 +1,19 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Inicio</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">inicio</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="welcome-container">
+    <div class="abstract-shape shape-1"></div>
+    <div class="abstract-shape shape-2"></div>
+
+    <div class="welcome-content">
+      <span class="badge-category">Antología Personal</span>
+      <h1 class="main-title">Versos & <br><span class="highlight">Melodías</span></h1>
+      <p class="subtitle">Un espacio interactivo donde las palabras cobran vida a través de la música y el diseño.</p>
+
+      <div class="action-area">
+        <ion-button class="btn-enter" expand="block" routerLink="/tabs/poemas">
+          Descubrir Poemas
+          <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </div>
 </ion-content>

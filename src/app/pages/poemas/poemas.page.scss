@@ -1,0 +1,114 @@
+.poemas-content {
+    --background: #fcf8f8; // Un fondo crema/blanco roto muy elegante
+}
+
+// Banner superior interno
+.header-decor {
+    background: linear-gradient(135deg, #8b0000 0%, #b30000 100%);
+    color: #ffffff;
+    padding: 30px 20px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.15);
+    margin-bottom: 20px;
+
+    h2 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 0 0 5px 0;
+    }
+
+    p {
+        font-size: 0.95rem;
+        opacity: 0.85;
+        margin: 0;
+    }
+}
+
+// Grid contenedor de tarjetas
+.cards-grid {
+    padding: 0 16px 80px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+// Tarjeta personalizada del poema
+.poema-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    border-left: 5px solid #8b0000; // El toque rojo que une la app
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: transform 0.2s ease;
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+.poema-autor {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #888888;
+    font-weight: 600;
+}
+
+.poema-titulo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #222222;
+    margin: 8px 0;
+}
+
+.poema-estrofa {
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.5;
+    font-style: italic;
+    margin: 0 0 15px 0;
+    white-space: pre-line; // Respeta los saltos de línea del poema
+}
+
+// Acciones de la tarjeta
+.card-actions {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 5px;
+
+    ion-button {
+        --padding-start: 8px;
+        --padding-end: 8px;
+        height: 38px;
+    }
+}
+
+// Estado vacío
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999999;
+
+    ion-icon {
+        font-size: 4rem;
+        color: #ccbbbb;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+// Botón flotante personalizado
+.fab-custom {
+    --background: #8b0000;
+    --background-activated: #660000;
+    --color: #ffffff;
+    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.4);
+}
