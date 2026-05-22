@@ -1,114 +1,202 @@
-.poemas-content {
-    --background: #fcf8f8; // Un fondo crema/blanco roto muy elegante
+.home-content {
+    --background: #f6f4ef;
 }
 
-// Banner superior interno
-.header-decor {
-    background: linear-gradient(135deg, #8b0000 0%, #b30000 100%);
-    color: #ffffff;
-    padding: 30px 20px;
-    border-bottom-right-radius: 40px;
-    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.15);
-    margin-bottom: 20px;
+/* HEADER */
+
+.top-header {
+    padding: 30px 22px 10px;
+
+    h1 {
+        font-size: 40px;
+        font-weight: 800;
+        color: #1f2937;
+        line-height: 1;
+        margin-bottom: 12px;
+    }
+
+    p {
+        color: #6b7280;
+        font-size: 16px;
+        line-height: 1.7;
+        max-width: 320px;
+    }
+}
+
+/* BADGE */
+
+.badge-category {
+    display: inline-block;
+
+    background: #e8dcc5;
+    color: #3f3528;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    margin-bottom: 22px;
+}
+
+/* TITULO */
+
+.main-title {
+    font-size: 58px;
+    line-height: 0.95;
+    font-weight: 800;
+
+    color: #111827;
+
+    margin: 0 0 20px;
+
+    span {
+        color: #7c3aed;
+        font-style: italic;
+        font-weight: 500;
+    }
+}
+
+/* HERO CARD */
+
+.hero-card {
+    margin: 25px 20px;
+
+    background: white;
+
+    border-radius: 35px;
+
+    padding: 28px;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* MINI INFO */
+
+.hero-info {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.hero-icon {
+    width: 75px;
+    height: 75px;
+
+    border-radius: 24px;
+
+    background: #dcd4f5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 34px;
+}
+
+.hero-text {
 
     h2 {
-        font-size: 1.8rem;
-        font-weight: 700;
-        margin: 0 0 5px 0;
+        font-size: 26px;
+        font-weight: 800;
+        color: #111827;
+        margin-bottom: 8px;
     }
 
     p {
-        font-size: 0.95rem;
-        opacity: 0.85;
-        margin: 0;
+        color: #6b7280;
+        line-height: 1.6;
+        font-size: 15px;
     }
 }
 
-// Grid contenedor de tarjetas
-.cards-grid {
-    padding: 0 16px 80px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+/* BOTÓN */
+
+.action-area {
+    padding: 10px 20px 100px;
 }
 
-// Tarjeta personalizada del poema
-.poema-card {
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
-    border-left: 5px solid #8b0000; // El toque rojo que une la app
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    transition: transform 0.2s ease;
+.btn-enter {
 
-    &:active {
-        transform: scale(0.98);
-    }
-}
+    --background: #7c3aed;
+    --color: white;
 
-.poema-autor {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: #888888;
-    font-weight: 600;
-}
+    --border-radius: 22px;
 
-.poema-titulo {
-    font-size: 1.3rem;
+    height: 60px;
+
+    font-size: 17px;
     font-weight: 700;
-    color: #222222;
-    margin: 8px 0;
+
+    letter-spacing: 0.5px;
+
+    --box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
 }
 
-.poema-estrofa {
-    font-size: 0.95rem;
-    color: #555555;
-    line-height: 1.5;
-    font-style: italic;
-    margin: 0 0 15px 0;
-    white-space: pre-line; // Respeta los saltos de línea del poema
+/* CARDS DECORATIVAS */
+
+.quick-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+
+    padding: 0 20px;
 }
 
-// Acciones de la tarjeta
-.card-actions {
+.quick-card {
+
+    border-radius: 28px;
+
+    min-height: 140px;
+
+    padding: 22px;
+
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
-    border-top: 1px solid #f0f0f0;
-    padding-top: 5px;
 
-    ion-button {
-        --padding-start: 8px;
-        --padding-end: 8px;
-        height: 38px;
-    }
+    transition: 0.3s ease;
 }
 
-// Estado vacío
-.empty-state {
-    text-align: center;
-    padding: 60px 20px;
-    color: #999999;
-
-    ion-icon {
-        font-size: 4rem;
-        color: #ccbbbb;
-        margin-bottom: 15px;
-    }
-
-    p {
-        font-size: 1rem;
-    }
+.quick-card:hover {
+    transform: translateY(-4px);
 }
 
-// Botón flotante personalizado
-.fab-custom {
-    --background: #8b0000;
-    --background-activated: #660000;
-    --color: #ffffff;
-    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.4);
+.quick-card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.quick-card p {
+    opacity: 0.7;
+}
+
+/* COLORES */
+
+.card-beige {
+    background: #e8dcc5;
+    color: #3f3528;
+}
+
+.card-green {
+    background: #cfe3d5;
+    color: #244234;
+}
+
+.card-purple {
+    background: #dcd4f5;
+    color: #43345f;
+}
+
+.card-gray {
+    background: #d6d3d1;
+    color: #2f2f2f;
 }

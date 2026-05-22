@@ -1,44 +1,87 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Mis Poemas</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="home-content">
 
-<ion-content [fullscreen]="true" class="poemas-content">
-  <div class="header-decor">
-    <h2>Colección Lírica</h2>
-    <p>Gestiona, inspira y edita tus obras literarias.</p>
+  <div class="top-header">
+
+    <span class="badge-category">
+      Antología Personal
+    </span>
+
+    <h1 class="main-title">
+      Versos &
+      <span>Melodías</span>
+    </h1>
+
+    <p>
+      Un espacio moderno para descubrir,
+      escribir y organizar tus poemas favoritos.
+    </p>
+
   </div>
 
-  <div class="cards-grid">
-    @for (poema of listaPoemas; track poema.id) {
-    <div class="poema-card">
-      <div class="card-body">
-        <span class="poema-autor">{{ poema.autor || 'Autor Anónimo' }}</span>
-        <h3 class="poema-titulo">{{ poema.titulo }}</h3>
-        <p class="poema-estrofa">{{ poema.contenido }}</p>
+  <!-- HERO -->
+
+  <div class="hero-card">
+
+    <div class="hero-info">
+
+      <div class="hero-icon">
+        ✨
       </div>
 
-      <div class="card-actions">
-        <ion-button fill="clear" color="primary" (click)="editarPoema(poema)">
-          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
-        </ion-button>
-        <ion-button fill="clear" color="danger" (click)="eliminarPoema(poema.id)">
-          <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
-        </ion-button>
+      <div class="hero-text">
+
+        <h2>Colección Creativa</h2>
+
+        <p>
+          Explora poemas únicos organizados
+          por emociones y estilos literarios.
+        </p>
+
       </div>
+
     </div>
-    } @empty {
-    <div class="empty-state">
-      <ion-icon name="book-outline"></ion-icon>
-      <p>Aún no has escrito ningún poema. ¡Empieza a inspirarte!</p>
-    </div>
-    }
+
   </div>
 
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button class="fab-custom" routerLink="/videojuego-form">
-      <ion-icon name="add-outline"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+  <!-- MINI CARDS -->
+
+  <div class="quick-grid">
+
+    <div class="quick-card card-beige">
+      <h3>Amor</h3>
+      <p>24 poemas</p>
+    </div>
+
+    <div class="quick-card card-purple">
+      <h3>Noches</h3>
+      <p>18 poemas</p>
+    </div>
+
+    <div class="quick-card card-green">
+      <h3>Naturaleza</h3>
+      <p>31 poemas</p>
+    </div>
+
+    <div class="quick-card card-gray">
+      <h3>Arte</h3>
+      <p>12 poemas</p>
+    </div>
+
+  </div>
+
+  <!-- BOTÓN -->
+
+  <div class="action-area">
+
+    <ion-button class="btn-enter" expand="block" routerLink="/tabs/poemas">
+
+      Descubrir Poemas
+
+      <ion-icon slot="end" name="arrow-forward-outline">
+      </ion-icon>
+
+    </ion-button>
+
+  </div>
+
 </ion-content>
